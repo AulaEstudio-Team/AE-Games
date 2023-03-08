@@ -9,7 +9,7 @@ def mock_minigame_view(request):
     return render(request, template_name)
 
 def conecta4(request):
-    """Default Minigame View
+    """Conecta 4
     TODO: remove
     """
     template_name = 'conecta-4/index.html'
