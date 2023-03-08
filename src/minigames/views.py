@@ -20,6 +20,7 @@ def ahorcado_view(request):
     """Default Minigame View
     """
     template_name = 'minijuego_ahorcado/ahorcado.html'
+    return render(request, template_name)
     
 
 def TRON_Legacy_minigame_view(request):
