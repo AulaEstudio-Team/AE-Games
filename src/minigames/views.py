@@ -16,6 +16,14 @@ def mock_minigame_view(request):
     return render(request, template_name)
 
 
+def my_guerradelperujuego(request):
+    """Guerra del peru minigame
+    TODO: remove
+    """
+    template_name = 'guerra_peru\index.html'
+    return render(request, template_name)
+    
+
 def ahorcado_view(request):
     """Default Minigame View
     """
