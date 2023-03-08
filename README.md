@@ -52,5 +52,3 @@ The admin view will be available at: [localhost:8000/admin/](http://127.0.0.1:80
 
 Remember that this execution is for local testing. For dev you must edit the settings.py, use a web interface and a webserver to retrieve the files.
 Learn more about Django deploy [here](https://docs.djangoproject.com/en/4.1/howto/deployment/)
-
-
