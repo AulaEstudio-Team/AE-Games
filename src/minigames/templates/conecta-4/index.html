@@ -4,8 +4,11 @@
 
 {% block minigame %}
     <div class="container">
-        <h2> This is a minigame mock </h2>
-        <img src="{% static 'img/Ejemplo.png' %}" alt="Home foto">
-        <p>Buenas</p>
+        <div id="tablero"></div>
+        <div id="ganador"></div>
+        <div id="marcador">
+            <h1 class="text-center"><b id="p1">0</b> vs <b id="ia">0</b></h1>
+        </div>
+        <div id="logros"></div>
     </div>
 {% endblock %}
