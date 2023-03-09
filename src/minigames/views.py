@@ -11,5 +11,5 @@ def mock_minigame_view(request):
 def atari_breakout(request):
     """Atari Breakout
     """
-    template_name = 'src\minigames\templates\atari_breakout\atari.html'
+    template_name = 'atari_breakout/atari.html'
     return render(request, template_name)
