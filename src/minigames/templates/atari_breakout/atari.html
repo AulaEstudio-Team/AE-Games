@@ -1,0 +1,14 @@
+{% extends 'minigame_base.html' %}
+{% load bootstrap5 %}
+{% load static %}
+
+{% block minigame %}
+<div id="juego">
+    <div id="puntuacion" align="right">Puntuacion: 0</div>
+    <div class="row text-center">
+        <div class="col">
+            <canvas id="mapa" width="800" height="400"></canvas>
+        </div>
+    </div>
+</div>
+{% endblock %}
