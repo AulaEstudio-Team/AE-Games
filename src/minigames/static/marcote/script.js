@@ -1,5 +1,5 @@
 "use strict";
-import { randomWord as _randomWord } from "words.js";
+import { randomWord as _randomWord } from "./words.js";
 let randomWord = _randomWord;
 const palabra = randomWord();
 
