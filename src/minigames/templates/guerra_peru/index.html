@@ -3,9 +3,66 @@
 {% load static %}
 
 {% block minigame %}
-    <div class="container">
-        <h2> Guerra del peru </h2>
-        <img src="{% static 'img/Ejemplo.png' %}" alt="Home foto">
-        <p> mi mininijuego </p>
-    </div>
+<div class="container text-center">
+    <h1 style="color:red">La guerra del Perú</h1>
+    <div class="row">
+        <div class="col-6">
+            <p style="color:yellow">Tablero</p>
+            
+            <div id="juego_geometry"></div>
+
+        </div>
+        <div class="col-6">
+            <p style="color:yellow">Lideres Disponibles</p>
+            
+            <div class="row">
+                <div class="col-3">
+                    <div id="cartas"></div>
+                    <button id="lider1_boton" data-title="+100 PP por bonificacion de expansion de territorio
+                                        +100 PP al atacar civilizaciones que no utilicen tu misma forma de gobierno
+                                        +50 PP poder al atacar tropas con diferentes caracteristicas raciales" onclick="lider_aliado();">
+                        <div id="carta1">
+                        <img src="theorodo.png" width="100%"><br>
+                        Theodore Roosevelt
+                    </div>
+                        </button>
+                    </div>
+                    <div class="col-3">
+                        <div id="cartas"></div>
+                        <button onclick="lider_aliado();">
+                            <div id="carta2">
+                                <img src="theorodo.png" width="100%"><br>
+                                Theodore Roosevelt
+                            </div>
+                                </button>
+                        </div>
+                        <div class="col-3">
+                            <div id="cartas"></div>
+                            <button onclick="lider_aliado();">
+                                <div id="carta3">
+                                    <img src="theorodo.png" width="100%"><br>
+                                    Theodore Roosevelt
+                                </div>
+                                    </button>
+                            </div>
+                            <div class="col-3">
+                                <div id="cartas"></div>
+                                <button onclick="lider_aliado();">
+                                    <div id="carta4">
+                                        <img src="theorodo.png" width="100%"><br>
+                                        Theodore Roosevelt
+                                    </div>
+                                        </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        </div>
+</div>
+    <script src="{% static 'guerra_peru\main.js' %}"></script>
 {% endblock %}
