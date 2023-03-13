@@ -16,6 +16,13 @@ def mock_minigame_view(request):
     return render(request, template_name)
 
 
+def atari_breakout(request):
+    """Atari Breakout
+    """
+    template_name = 'atari_breakout/atari.html'
+    return render(request, template_name)
+    
+
 def my_guerradelperujuego(request):
     """Guerra del peru minigame
     TODO: remove
