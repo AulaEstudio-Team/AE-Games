@@ -1,8 +1,10 @@
 {% extends 'minigame_base.html' %}
 {% load bootstrap5 %}
 {% load static %}
+{% load static %}
 
 {% block minigame %}
+<link href="{% static "atari_breakout/style.css" %}" rel="stylesheet"/>
 <div id="juego">
     <div id="puntuacion" align="right">Puntuacion: 0</div>
     <div class="row text-center">
@@ -11,4 +13,5 @@
         </div>
     </div>
 </div>
+<script src="{%static 'atari_breakout/main.js'%}"></script>
 {% endblock %}
