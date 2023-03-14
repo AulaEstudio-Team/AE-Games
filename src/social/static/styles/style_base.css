@@ -1,0 +1,81 @@
+@font-face {
+    font-family: arcade;
+    src: url(../fonts/arcade.ttf);
+}
+
+html, body {
+    height: 100%;
+    width: 100%
+}
+
+body {
+    background-image: linear-gradient(180deg, rgb(27, 27, 54) 0%, rgb(49, 49, 94) 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: overlay;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body:hover::-webkit-scrollbar {
+    display: initial;
+}
+
+#logo {
+    width: 100px;
+    margin-left: 10px;
+}
+
+#logo:hover{
+    cursor: pointer;
+}
+
+#navigation {
+    background-color: rgb(22, 22, 44);
+}
+
+#profile {
+    width: 70px;
+    border-radius: 50%;
+    border: 2px solid rgb(0, 183, 255);
+}
+
+#profile_box {
+    background-color: #14142900;
+    color: none;
+    margin-top: 6px;
+    border: none;
+}
+
+#profile_box:focus {
+    border: none;
+    box-shadow: none;
+}
+
+#profile:hover {
+    cursor: pointer;
+    border: 2px solid rgb(41, 255, 13);
+}
+
+
+footer{
+    position: fixed;
+    bottom: 0;
+    z-index: -100;
+    width: 100%;
+}
+
+#copy{
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#ae_logo{
+    width: 250px;
+    margin: 10px;
+    padding-right: 10px;
+    border-right: 1px solid gray;
+}

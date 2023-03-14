@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,35 +8,41 @@
     {% bootstrap_css %}
     {% bootstrap_javascript %}
     {% bootstrap_messages %}
+    {% load static %}
 
+    <link rel="stylesheet" href="{% static 'styles/style_base.css' %}">
     <title>AulaEstudio</title>
 
 </head>
+
 <body class="m-0 border-0">
-
-    <nav class="px-3 navbar navbar-expand bg-light">
-        <a class="navbar-brand" href="#">AulaEstudio</a>
-        <div class="ms-auto">
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle disabled" disabled href="#" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false">
-                        Profile
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">Log In</a></li>
-                        <li><a class="dropdown-item" href="#">Sing In</a></li>
-                        <li><a class="dropdown-item" href="#">Edit profile...</a></li>
-                    </ul>
-                </li>
-            </ul>
+    <div class="row" id="navigation">
+        <div class="col"><img src="{% static 'img/logo_def.png' %}" alt="logo" id="logo"></div>
+        <div class="col" align="right">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="profile_box"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <a href=""><img id="profile" src="{% static 'img/profile_example.jpg' %}" alt=""></a>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="profile_box">
+                    <li><a class="dropdown-item" href="#">Log In</a></li>
+                    <li><a class="dropdown-item" href="#">Sign In</a></li>
+                    <li><a class="dropdown-item" href="#">Edit Profile...</a></li>
+                </ul>
+            </div>
         </div>
-    </nav>
-
-    <div class="m-3">
-        {% block content %}
-
-        {% endblock content %}
     </div>
+    </div>
+    {% block content %}
+
+    {% endblock content %}
+    </div>
+    <footer>
+        <div class="row" id="navigation">
+            <div class="col" align="right"><img src="{%static 'img/logo_aula_estudio.png'%}" alt="" id="ae_logo"></div>
+            <div class="col" align="left" id="copy">© Copyright 2023-2024</div>
+        </div>
+    </footer>
 </body>
+
 </html>
