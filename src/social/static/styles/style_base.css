@@ -1,0 +1,41 @@
+html, body {
+    height: 100%
+}
+
+#logo {
+    width: 100px;
+    margin-left: 10px;
+}
+
+#navigation {
+    background-color: rgb(22, 22, 44);
+}
+
+#profile {
+    width: 70px;
+    border-radius: 50%;
+    border: 2px solid rgb(0, 183, 255);
+}
+
+#profile_box {
+    background-color: #141429;
+    color: none;
+    margin-top: 6px;
+    border: none;
+}
+
+#profile_box:focus {
+    border: none;
+    box-shadow: none;
+}
+
+#profile:hover {
+    cursor: pointer;
+    border: 2px solid rgb(41, 255, 13);
+}
+
+body {
+    background-image: linear-gradient(180deg, rgb(27, 27, 54) 0%, rgb(49, 49, 94) 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
