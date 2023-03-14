@@ -22,7 +22,7 @@
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="profile_box"
                     data-bs-toggle="dropdown" aria-expanded="false">
-                    <img id="profile" src="{% static 'img/profile_example.jpg' %}" alt="">
+                    <a href=""><img id="profile" src="{% static 'img/profile_example.jpg' %}" alt=""></a>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="profile_box">
                     <li><a class="dropdown-item" href="#">Log In</a></li>
@@ -33,14 +33,16 @@
         </div>
     </div>
     </div>
-    <div class="row">
-        <div class="col"></div>
-    </div>
     {% block content %}
 
     {% endblock content %}
     </div>
-    <footer>hola</footer>
+    <footer>
+        <div class="row" id="navigation">
+            <div class="col" align="right"><img src="{%static 'img/logo_aula_estudio.png'%}" alt="" id="ae_logo"></div>
+            <div class="col" align="left" id="copy">© Copyright 2023-2024</div>
+        </div>
+    </footer>
 </body>
 
 </html>
