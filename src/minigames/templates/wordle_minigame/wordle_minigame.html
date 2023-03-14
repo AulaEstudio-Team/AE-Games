@@ -3,8 +3,9 @@
 {% load static %}
 
 {% block minigame %}
+ <link rel="stylesheet" href="{% static 'marcote/css/style.css' %}">
     <div id="game">
-        <h1>Wordle</h1>
+        <h1 id="word"></h1>
     </div>
     <script type="module" src="{% static 'marcote/script.js' %}"></script>
     <script type="module" src="{% static 'marcote/words.js' %}"></script>
