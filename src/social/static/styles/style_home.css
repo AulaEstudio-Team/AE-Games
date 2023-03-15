@@ -51,14 +51,21 @@
     z-index: 100 !important;
     font-size: 100px;
     color: white;
-    text-shadow: 10px 10px 10px rgb(49, 49, 94);
+    text-shadow: 10px 10px 10px rgb(0, 183, 255);
+    z-index: 1000 !important;
 }
 
 #inicio {
     height: 100vh;
     width: 100vw;
-    background: black;
-    /* z-index: 200 !important; */
+}
+
+.overlay-inicio{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    background-color: rgba(49, 49, 94, 0.555);
 }
 
 @keyframes slideInFromLeft {
