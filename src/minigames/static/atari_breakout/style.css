@@ -3,7 +3,7 @@
     src: url(fonts/GamePlayed-vYL7.ttf);
 }
 
-body{
+#juego{
     background-color: rgb(36, 36, 36);
 }
 
@@ -82,4 +82,27 @@ body{
 
 #start:hover{
     background-color:  rgba(0, 0, 0, 0.527);
+}
+
+#game_over{
+    font-family: arcade;
+    font-size: 60px;
+    color: white;
+    margin-top: 10%;
+    text-shadow: 4px 2px 0px green;
+}
+
+#restart{
+    border: 2px solid green;
+    width: 15%;
+    height: 140%;
+    border-radius: 10px;
+    font-family: arcade;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    box-shadow: 3px 3px 0px black;
+}
+
+#restart:hover{
+    box-shadow: none;
 }
