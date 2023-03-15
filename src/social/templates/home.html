@@ -3,8 +3,148 @@
 {% load static %}
 
 {% block content %}
-    <div class="container">
-        <h1> AulaEstudio Games </h1>
-        <img src="{% static 'img/Ejemplo.png' %}" alt="Home foto">
+<link rel="stylesheet" href="{% static 'styles/style_home.css' %}">
+<div class="m-5 p-5">
+    <div class="owl-carousel">
+        <div class="item" style="height: 250px;">
+            <div class="card carta">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="200"
+                    xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMid slice"
+                    focusable="false">
+                    <rect width="100%" height="100%" fill="#868e96"></rect>
+                </svg>
+                <div class="overlay">
+                    <div class="text">
+                        <a href="">Minigames 1</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item" style="height: 200px;">
+            <div class="card carta">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="200"
+                    xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMid slice"
+                    focusable="false">
+                    <rect width="100%" height="100%" fill="#868e96"></rect>
+                </svg>
+                <div class="overlay">
+                    <div class="text">
+                        <a href="">Minigames 2</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item" style="height: 200px;">
+            <div class="card carta">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="200"
+                    xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMid slice"
+                    focusable="false">
+                    <rect width="100%" height="100%" fill="#868e96"></rect>
+                </svg>
+                <div class="overlay">
+                    <div class="text">
+                        <a href="">Minigames 3</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item" style="height: 200px;">
+            <div class="card carta">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="200"
+                    xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMid slice"
+                    focusable="false">
+                    <rect width="100%" height="100%" fill="#868e96"></rect>
+                </svg>
+                <div class="overlay">
+                    <div class="text">
+                        <a href="">Minigames 4</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item" style="height: 200px;">
+            <div class="card carta">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="200"
+                    xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMid slice"
+                    focusable="false">
+                    <rect width="100%" height="100%" fill="#868e96"></rect>
+                </svg>
+                <div class="overlay">
+                    <div class="text">
+                        <a href="">Minigames 5</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item" style="height: 200px;">
+            <div class="card carta">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="200"
+                    xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMid slice"
+                    focusable="false">
+                    <rect width="100%" height="100%" fill="#868e96"></rect>
+                </svg>
+                <div class="overlay">
+                    <div class="text">
+                        <a href="">Minigames 6</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item" style="height: 200px;">
+            <div class="card carta">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="200"
+                    xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMid slice"
+                    focusable="false">
+                    <rect width="100%" height="100%" fill="#868e96"></rect>
+                </svg>
+                <div class="overlay">
+                    <div class="text">
+                        <a href="">Minigames 7</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item" style="height: 200px;">
+            <div class="card carta">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="200"
+                    xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMid slice"
+                    focusable="false">
+                    <rect width="100%" height="100%" fill="#868e96"></rect>
+                </svg>
+                <div class="overlay">
+                    <div class="text">
+                        <a href="">Minigames 8</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+    integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 15,
+        autoplay: true,
+        responsiveClass: true,
+        autoplayTimeout: 5000,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            600: {
+                items: 2,
+            },
+            1000: {
+                items: 4,
+            }
+        }
+    })
+</script>
 {% endblock %}
