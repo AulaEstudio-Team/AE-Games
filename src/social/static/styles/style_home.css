@@ -1,4 +1,6 @@
-svg {
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.card-img-top {
     opacity: 1;
     display: block;
     width: 100%;
@@ -36,7 +38,58 @@ svg {
     color: black;
 }
 
-.text a:hover{
+.text a:hover {
     font-size: 24px;
     transition: font 0.3s ease;
 }
+
+#titulo-home{
+    font-family: 'Press Start 2P', cursive;
+    top:30%;
+    position:absolute;
+    animation: 1.5s ease-out 0s 1 slideInFromLeft;
+    z-index: 100 !important;
+    font-size: 100px;
+    color: white;
+    text-shadow: 10px 10px 10px rgb(0, 183, 255);
+    z-index: 1000 !important;
+}
+
+#inicio {
+    height: 100vh;
+    width: 100vw;
+}
+
+.overlay-inicio{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    background-color: rgba(49, 49, 94, 0.555);
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@media screen and (min-width: 750px) and (max-width: 1000px) {
+    #titulo-home {
+      font-size: 60px;
+    }
+  }
+
+  @media screen and (min-width: 550px) and (max-width: 750px) {
+    #titulo-home {
+      font-size: 50px;
+    }
+  }
+  @media screen and (min-width: 250px) and (max-width: 550px) {
+    #titulo-home {
+      font-size: 35px;
+    }
+  }
