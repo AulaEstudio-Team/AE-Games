@@ -49,5 +49,5 @@ def conecta4(request):
     """Conecta 4
     TODO: remove
     """
-    template_name = 'conecta-4/index.html'
+    template_name = 'conecta-4_minigame/index_minigame.html'
     return render(request, template_name)

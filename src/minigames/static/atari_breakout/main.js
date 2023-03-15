@@ -1,5 +1,5 @@
 "use strict";
-
+const GAME = document.getElementById("juego");
 const HEIGHT = 400;
 const WIDTH = 800;
 const BALL = 10;
@@ -59,10 +59,13 @@ function tick() {
         movimiento.y = - movimiento.y;
     }
     //Colision contra barrera
+    
+    //Reducir tamaño de la barrer cada vez que la bola colisiona con ella.
     if (newy > POS_INICIAL_TRAMP.y - BALL - 3 && newx > POS_INICIAL_TRAMP.x - BALL * 2 && newx < POS_INICIAL_TRAMP.x + TRAMPOLIN_LENGTH * 2 + BALL * 2) {
         if (TRAMPOLIN_LENGTH > 25) {
             TRAMPOLIN_LENGTH -= 1;
         }
+    //Rebote con la barrera+
         if (newy > POS_INICIAL_TRAMP.y - BALL - 3 && newx > POS_INICIAL_TRAMP.x - BALL * 2 + (TRAMPOLIN_LENGTH / 1.2) && newx < POS_INICIAL_TRAMP.x + TRAMPOLIN_LENGTH * 2 + BALL * 2 - (TRAMPOLIN_LENGTH / 1.2)) {
             movimiento.y = movimientoAleatorio().y;
         } else if (newy > POS_INICIAL_TRAMP.y - BALL - 3 && newx > POS_INICIAL_TRAMP.x - BALL * 2 && newx < POS_INICIAL_TRAMP.x + (TRAMPOLIN_LENGTH / 1.2)) {
@@ -72,8 +75,6 @@ function tick() {
         } else if (newy > POS_INICIAL_TRAMP.y - BALL - 3 && newx > POS_INICIAL_TRAMP.x + TRAMPOLIN_LENGTH * 2 + BALL * 2 - (TRAMPOLIN_LENGTH / 1.2) && newx < POS_INICIAL_TRAMP.x + TRAMPOLIN_LENGTH * 2 + BALL * 2) {
             movimiento.y = -movimiento.y * 1.1;
             movimiento.x = 8;
-        }else{
-            
         }
     }
     //Colision contra bloques
@@ -95,7 +96,13 @@ function tick() {
         movimiento.y = - movimiento.y;
         choca = true;
     }
-    if (newy > POS_INICIAL_TRAMP.y + BALL) {
+    if (newy > POS_INICIAL_TRAMP.y + 20 + BALL) {
+        GAME.innerHTML = '<div class="row">' + 
+        '<div class="col" align="center" id="game_over">GAME OVER</div>'+
+        '</div>'+
+        '<div class="row">' +
+        '<div class="col" align="center"><button id="restart" onclick="restart()">RESTART</button></div>' +
+        '</div>';
         return false;
     }
     let i = 0;
@@ -115,7 +122,7 @@ function tick() {
 }
 
 function pelota() {
-    ctx.fillStyle = "white"
+    ctx.fillStyle = "white";
     ctx.clearRect(0, 0, WIDTH, HEIGHT);
     ctx.beginPath();
     ctx.arc(POS_INICIAL.x, POS_INICIAL.y, BALL, 0, Math.PI * 2);
@@ -194,5 +201,8 @@ function crearCubo1() {
     ctx.fill();
 }
 
+function restart(){
+    location.reload();
+}
 
 tick();
