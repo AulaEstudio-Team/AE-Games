@@ -3,7 +3,7 @@ import * as THREE from './three.module.js';
     var scene, camera, renderer;
 
     let stopAnimate = false;
-    let LINE_COUNT = 600;
+    let LINE_COUNT = 3000;
     let geom = new THREE.BufferGeometry();
     geom.setAttribute("position", new THREE.BufferAttribute(new Float32Array(6*LINE_COUNT), 3));
     geom.setAttribute("velocity", new THREE.BufferAttribute(new Float32Array(2*LINE_COUNT), 1));
