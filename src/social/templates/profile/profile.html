@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% load static %}
+
+{% block content %}
+    {% for dato in datos_lista%}
+        <p>{{ dato.user}} {{ dato.experience }}</p>
+    {% endfor %}
+{% endblock %}
