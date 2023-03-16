@@ -1,8 +1,9 @@
-import * as THREE from 'https://unpkg.com/three/build/three.module.js';
+import * as THREE from './three.module.js';
+
     var scene, camera, renderer;
 
     let stopAnimate = false;
-    let LINE_COUNT = 2500;
+    let LINE_COUNT = 3000;
     let geom = new THREE.BufferGeometry();
     geom.setAttribute("position", new THREE.BufferAttribute(new Float32Array(6*LINE_COUNT), 3));
     geom.setAttribute("velocity", new THREE.BufferAttribute(new Float32Array(2*LINE_COUNT), 1));
@@ -12,7 +13,6 @@ import * as THREE from 'https://unpkg.com/three/build/three.module.js';
     let va = vel.array;
 
     function init() {
-        console.log("hola")
         scene = new THREE.Scene();
         camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 1, 500);
         camera.position.z = 200;
