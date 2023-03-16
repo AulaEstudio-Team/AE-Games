@@ -93,6 +93,41 @@
     animation: ca3_fade_move_down 2s ease-in-out infinite;
 }
 
+.about-home {
+    min-height: 500px;
+    background-color: rgba(255, 255, 255, 0.329);
+    border-radius: 15px;
+    backdrop-filter: blur(50px);
+}
+
+.titulo-about{
+    font-family: 'Press Start 2P', cursive !important;
+    color: white;
+    text-shadow: 5px 5px 5px rgb(0, 183, 255);
+}
+
+.text-about{
+    font-size: larger;
+}
+
+.controller-about{
+    max-width: 400px;
+    aspect-ratio: 1/1 !important;
+}
+
+.about-button{
+    background-color: #3361A5 !important;
+    border: none !important;
+    border-radius: none !important;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.about-button:hover{
+    background-color: #144288 !important;
+    transition: ease-in 0.2s;
+}
+
 @keyframes slideInFromLeft {
     0% {
         transform: translateX(-100%);
