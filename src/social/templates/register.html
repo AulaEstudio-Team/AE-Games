@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'styles/style_register.css' %}">
+<div class="overlay-inicio"></div>
+<div class="row d-flex justify-content-center" id="form_box">
+    <div class="col" id="titulo-home">
+            <form method="post" action="" id="register_form">
+                <input class="inputs" type="text" name="username" id="username" placeholder="Username..."><br>
+                <input class="inputs" type="text" name="email" id="email" placeholder="E-Mail..."><br>
+                <input class="inputs" type="password" name="password" id="password" placeholder="Pasword..."><br>
+                <input class="inputs" type="password" name="r-password" id="r-password"
+                    placeholder="Repeat password..."><br>
+                    <button class="btn" onclick="return false">Enviar</button>
+            </form>
+    </div>
+</div>
+<div id="inicio">
+</div>
+<script src="../static/home/script-home.js" type="module"></script>
+{% endblock %}
