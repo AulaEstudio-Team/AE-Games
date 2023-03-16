@@ -56,8 +56,8 @@ import * as THREE from './three.module.js';
     function animate() {
             for (let line_index= 0; line_index < LINE_COUNT; line_index++) {
                 if(stopAnimate){
-                    va[2*line_index] += 0.0000000005
-                    va[2*line_index+1] += 0.0000000005
+                    va[2*line_index] += 0.00003; 
+                    va[2*line_index+1] += 0.000025;
                 }else{
                     va[2*line_index] += 0.03; 
                     va[2*line_index+1] += 0.025;
@@ -82,5 +82,6 @@ import * as THREE from './three.module.js';
 
     setTimeout( function() {
         stopAnimate = true;
+
       }, 2000);
     init();
