@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'styles/style_register.css' %}">
+<div class="overlay-inicio"></div>
+<pre id="titulo-home">    
+    <form method="post" action="">
+    <input type="text" name="username" id="username" placeholder="Username...">
+    <input type="text" name="email" id="email" placeholder="E-Mail...">
+    <input type="password" name="password" id="password" placeholder="Pasword...">
+    <input type="password" name="r-password" id="r-password" placeholder="Repeat password...">
+    <input type="submit">
+    
+</form></pre>
+<div id="inicio">
+</div>
+<script src="../static/home/script-home.js" type="module"></script>
+{% endblock %}
