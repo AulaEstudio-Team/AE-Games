@@ -16,6 +16,11 @@ def register_view(request):
     template_name = "register.html"
     return render(request, template_name)
 
+def login(request):
+    """Login View"""
+    template_name = "login.html"
+    return render(request, template_name);
+
 def profile_view(request):
     """Profile View"""
     mis_datos= Profile.objects.all().values()
