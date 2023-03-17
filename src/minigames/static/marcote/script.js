@@ -1,28 +1,29 @@
 "use strict";
 import { randomWord as _randomWord } from "./words.js";
 let randomWord = _randomWord;
-const palabra = randomWord();
+const random = randomWord();
 
-console.log('randomWord', palabra)
-
-const state = {
-    grid: Array(6)
-        .fill()
-        .map(() => Array(5).fill("")),
-    currentRow: 0,
-    currentCol: 0
-};
+function draw(container) {
+    const grid = document.createElement('div');
+    grid.className = 'grid';
+    for (let i = 0; i < 6; i++) {
+        for (let j = 0; j < 5; j++) {
+            drawCelda(grid, i, j);
+        }
+    }
+    container.appendChild(grid);
+}
 
 function update() {
-    for (let i = 0; i < state.grid.length; i++) {
-        for (let j = 0; j < state.grid[i].length; j++) {
+    for (let i = 0; i < info.grid.length; i++) {
+        for (let j = 0; j < info.grid[i].length; j++) {
             const box = document.getElementById(`box${i}${j}`);
-            box.textContent = state.grid[i][j];
+            box.textContent = info.grid[i][j];
         }
     }
 }
 
-function draw(container, row, col, letter = "") {
+function drawCelda(container, row, col, letter = '') {
     const box = document.createElement('div');
     box.className = 'box';
     box.textContent = letter;
@@ -31,54 +32,82 @@ function draw(container, row, col, letter = "") {
     return box;
 }
 
-function drawGame(container) {
-    const grid = document.createElement('div');
-    grid.className = 'grid';
-    for (let i = 0; i < 6; i++) {
-        for (let j = 0; j < 5; j++) {
-            draw(grid, i, j);
+const info = {
+    random: random,
+    grid: Array(6)
+        .fill()
+        .map(() => Array(5).fill('')),
+    row: 0,
+    col: 0,
+};
+
+function palabraActual() {
+    return info.grid[info.row].reduce((prev, curr) => prev + curr);
+}
+
+function revelar(guess) {
+    const row = info.row;
+    for (let i = 0; i < 5; i++) {
+        const box = document.getElementById(`box${row}${i}`);
+        const letter = box.textContent;
+        if (letter === info.random[i]) {
+            box.classList.add('right');
+        } else if (info.random.includes(letter)) {
+            box.classList.add('wrong');
+        } else {
+            box.classList.add('empty');
         }
     }
-    container.appendChild(grid);
+    const ganador = info.random == guess;
+    const final = info.row == 5;
+    if (ganador) {
+        document.getElementById('resultado-wordle').innerHTML = 'Has ganado 👍';
+    } else if (final) {
+        document.getElementById('resultado-wordle').innerHTML = `Has perdido, la random era: ${info.random}`;
+    }
 }
 
-function isLetter() {
-
+function add(letter) {
+    if (info.col === 5) {
+        return
+    };
+    info.grid[info.row][info.col] = letter;
+    info.col++;
 }
 
-function updateGrid() {
-
+function borrar() {
+    if (info.col === 0) {
+        return
+    };
+    info.grid[info.row][info.col - 1] = '';
+    info.col--;
 }
 
-function registerKey() {
+function teclas() {
     document.body.onkeydown = (e) => {
         const key = e.key;
-        if (key === "Enter") {
+        if (key === 'Enter') {
+            if (info.col === 5) {
+                const word = palabraActual();
+                revelar(word);
+                info.row++;
+                info.col = 0;
+            }
         }
-        if (key === "Backspace") {
-
+        if (key === 'Backspace') {
+            borrar();
         }
-        if (isLetter(key)) {
-
+        if (key.length === 1 && key.match(/[a-z]/i)) {
+            add(key);
         }
-        updateGrid();
+        update();
     };
 }
 
-function main() {
-    const game = document.getElementById("game");
-    drawGame(game);
-    // registerKey();
+function start() {
+    const game = document.getElementById('game');
+    draw(game);
+    teclas();
 }
 
-main();
-
-
-
-document.querySelectorAll(".letter").forEach((element) => {
-    element.addEventListener("click", async () => {
-        element.innerHTML = "A";
-    })
-})
-
-$("#word").text(palabra);
+start();
