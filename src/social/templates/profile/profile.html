@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% load static %}
+
+{% block content %}
+    {% for dato in datos_lista%}
+        <p>{{ datos_lista }}</p>
+    {% endfor %}
+{% endblock %}
