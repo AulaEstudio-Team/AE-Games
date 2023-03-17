@@ -8,7 +8,7 @@ let puntuacion = 0;
 const POS_INICIAL = { x: WIDTH / 2, y: HEIGHT / 2 };
 const mapa = document.getElementById("mapa");
 const ctx = mapa.getContext("2d");
-const SPEED = 4;
+const SPEED = 3;
 let TRAMPOLIN_LENGTH = 80;
 const POS_INICIAL_TRAMP = { x: WIDTH / 2 - TRAMPOLIN_LENGTH, y: HEIGHT - HEIGHT / 6 }
 
@@ -22,6 +22,10 @@ const movimiento = {
     y: 4
 }
 
+/**
+ * 
+ * @returns Función que devuelve un objeto con las coordenadas de un movimiento aleatorio
+ */
 function movimientoAleatorio() {
     let random_move = {
         x: Math.random() * (SPEED * 2) - SPEED,
@@ -30,6 +34,10 @@ function movimientoAleatorio() {
     return random_move;
 }
 
+/**
+ * 
+ * @returns Función que se encarga de realizar el tickrate dej juego y controlar su colisiones, además de parámetros de velocidad y puntos.
+ */
 function tick() {
     let choca = false;
     let puntos = document.getElementById("puntuacion");
@@ -65,16 +73,16 @@ function tick() {
         if (TRAMPOLIN_LENGTH > 25) {
             TRAMPOLIN_LENGTH -= 1;
         }
-    //Rebote con la barrera+
+    //Rebote con la barrera
         if (newy > POS_INICIAL_TRAMP.y - BALL - 3 && newx > POS_INICIAL_TRAMP.x - BALL * 2 + (TRAMPOLIN_LENGTH / 1.2) && newx < POS_INICIAL_TRAMP.x + TRAMPOLIN_LENGTH * 2 + BALL * 2 - (TRAMPOLIN_LENGTH / 1.2)) {
             movimiento.y = movimientoAleatorio().y;
         } else if (newy > POS_INICIAL_TRAMP.y - BALL - 3 && newx > POS_INICIAL_TRAMP.x - BALL * 2 && newx < POS_INICIAL_TRAMP.x + (TRAMPOLIN_LENGTH / 1.2)) {
             movimiento.y = -movimiento.y * 1.1;
-            movimiento.x = -8;
+            movimiento.x = -7;
             console.log('-movimiento.x - SPEED', -movimiento.x - SPEED)
         } else if (newy > POS_INICIAL_TRAMP.y - BALL - 3 && newx > POS_INICIAL_TRAMP.x + TRAMPOLIN_LENGTH * 2 + BALL * 2 - (TRAMPOLIN_LENGTH / 1.2) && newx < POS_INICIAL_TRAMP.x + TRAMPOLIN_LENGTH * 2 + BALL * 2) {
             movimiento.y = -movimiento.y * 1.1;
-            movimiento.x = 8;
+            movimiento.x = 7;
         }
     }
     //Colision contra bloques
@@ -96,7 +104,8 @@ function tick() {
         movimiento.y = - movimiento.y;
         choca = true;
     }
-    if (newy > POS_INICIAL_TRAMP.y + 20 + BALL) {
+    //Generación de pantalla de game over
+    if (newy > POS_INICIAL_TRAMP.y + 10 + BALL) {
         GAME.innerHTML = '<div class="row">' + 
         '<div class="col" align="center" id="game_over">GAME OVER</div>'+
         '</div>'+
@@ -106,6 +115,7 @@ function tick() {
         return false;
     }
     let i = 0;
+    //Desaparición de los cubos
     for (let cubo of cubos) {
         if (choca && newx + BALL * 1.1 > cubo.x && newx - BALL * 1.1 < cubo.x + cubo.width) {
             cubos[i].width = 0;
@@ -121,6 +131,9 @@ function tick() {
     setTimeout(tick, 10);
 }
 
+/**
+ * Función que genera la pelota
+ */
 function pelota() {
     ctx.fillStyle = "white";
     ctx.clearRect(0, 0, WIDTH, HEIGHT);
@@ -129,6 +142,9 @@ function pelota() {
     ctx.fill();
 }
 
+/**
+ * Función que genera la barra contra la que golpea la pelota
+ */
 function trampolin() {
     ctx.lineWidth = 8;
     ctx.strokeStyle = "white";
@@ -138,11 +154,16 @@ function trampolin() {
     ctx.stroke();
 }
 
-
+//Recojo cuando se pulsa y se suelta una tecla.
 document.onkeydown = function (key) { moverTrampolin(key); }
 document.onkeyup = function () { pararTrampolin(); }
 
 let move = null;
+/**
+ * Función que recibe las interacciones de las teclas y crea intervalos para generar un movimiento fluído
+ * @param {*} evt 
+ * @returns 
+ */
 function moverTrampolin(evt) {
     let right = false;
     let left = false;
@@ -169,10 +190,16 @@ function moverTrampolin(evt) {
     }
 }
 
+/**
+ * Función que detiene el trampolín cuando levantas la tecla.
+ */
 function pararTrampolin() {
     window.clearInterval(move);
 }
 
+/**
+ * Función que mete los cubos en el array de cubos.
+ */
 function crearCubos() {
     let x = 10;
     let cubo = {
@@ -192,6 +219,22 @@ function crearCubos() {
     }
 }
 
+/**
+ * Función que genera nuevos cubos cuando más de dos ya han sido destruídos.
+ */
+function generarNuevosCubos(){
+    setInterval(()=>{
+        let posicion_cubo = Math.floor(Math.random() * ((cubos.length - 1) - 0 + 1) + 0);
+        if(puntuacion != 20){
+            cubos[posicion_cubo].width = 80;
+            cubos[posicion_cubo].height = 40;
+        }
+    }, 1000)
+}
+
+/**
+ * Funciónque imprime todos los cubos en el canvas
+ */
 function crearCubo1() {
     ctx.lineWidth = 5;
     ctx.fillStyle = "#9161c9";
@@ -201,8 +244,13 @@ function crearCubo1() {
     ctx.fill();
 }
 
+/**
+ * Funión que reinicia el juego después del game over
+ */
 function restart(){
     location.reload();
 }
 
+
 tick();
+generarNuevosCubos();
