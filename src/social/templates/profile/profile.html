@@ -3,7 +3,129 @@
 {% load static %}
 
 {% block content %}
-    {% for dato in datos_lista%}
-        <p>{{ datos_lista }}</p>
-    {% endfor %}
+<link rel="stylesheet" href="{% static 'styles/style_profile.css' %}">
+{% for dato in datos_lista%}
+<p>{{ datos_lista }}</p>
+{% endfor %}
+
+<div class="row m-2">
+    <div class="col-lg-4">
+        <div class="card mb-4" id="carta-perfil">
+            <div class="card-body text-center">
+                <img src="{% static 'img/profile_example.jpg' %}" alt="avatar"
+                class="rounded-circle img-fluid" style="width: 150px;">
+                <h5 class="my-3">Iván Pérez</h5>
+                <p class="text-white-50 mb-1">3000 xp</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-lg-8">
+        <div class="card mb-4" id="carta-perfil">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Minigame 1</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-white-50 mb-0">1000 xp</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Minigame 2</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-white-50 mb-0">1000 xp</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Minigame 3</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-white-50 mb-0">1000 xp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4" id="carta-perfil">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <p class="mb-0">Nombre de Misión</p>
+                            </div>
+                            <div class="col-sm-8">
+                                <p class="text-white-50 mb-0">Descripción de la misión</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <p class="mb-0">Nombre de Misión</p>
+                            </div>
+                            <div class="col-sm-8">
+                                <p class="text-white-50 mb-0">Descripción de la misión</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <p class="mb-0">Nombre de Misión</p>
+                            </div>
+                            <div class="col-sm-8">
+                                <p class="text-white-50 mb-0">Descripción de la misión</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="card mb-4" id="carta-perfil">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <p class="mb-0">Nombre de Misión</p>
+                            </div>
+                            <div class="col-sm-8">
+                                <p class="text-white-50 mb-0">Descripción de la misión</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <p class="mb-0">Nombre de Misión</p>
+                            </div>
+                            <div class="col-sm-8">
+                                <p class="text-white-50 mb-0">Descripción de la misión</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <p class="mb-0">Nombre de Misión</p>
+                            </div>
+                            <div class="col-sm-8">
+                                <p class="text-white-50 mb-0">Descripción de la misión</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+</div>
 {% endblock %}
