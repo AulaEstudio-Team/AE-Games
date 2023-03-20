@@ -1,0 +1,41 @@
+body{
+    background-image: url(img/2acc8ef5c8abaf6c42b4c79f4d08feb7.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+}
+
+input{
+    border-radius: 5px;
+    border: 0;
+    height: 30px;
+}
+
+#mostrar_texto{
+    font-style: bold;
+    
+}
+
+
+#table{
+    font-size: xx-large;
+}
+
+button{
+    border-radius: 5px;
+    border: 0;
+    height: 30px;
+}
+
+#imagen2{
+    margin-top: 19em;
+    margin-left: 19em;
+}
+#form{
+    margin-top: -10em;
+    margin-left: -5em;
+}
+
+#tabla{
+    margin-top: 5em;
+}
