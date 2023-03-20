@@ -3,22 +3,39 @@
 {% load static %}
 
 {% block minigame %}
-<div>
-    <input placeholder="Introduce una letra" type="text" id="letra" maxlength="1" required>
-    <input type="submit" value="Comprobar" onclick="return usuario()">
-    
-    <table>
-      <tr>
-        <th>Letras falladas</th>
-        <th>Fallos</th>
-        <th>Aciertos</th>
-      </tr>
-      <tr>
-        <td><p id="falladas"></p></td>
-        <td><p id="fallos"></p></td>
-        <td><p id="aciertos"></p></td>
-      </tr>
-    </table>
-    <h1 id="palabra"></h1>
+<link rel="stylesheet" href="{% static 'ahorcado/styles.css' %}">
+<div class="container text-center">
+  <div class="row justify-content-center align-items-center">
+      <div class="col-12">
+          <img id="imagen2">
+      </div>
   </div>
+  <div class="row justify-content-center align-items-center">
+      <div class="col-4">
+          <form id="form">
+              <input placeholder="Introduce una letra" type="text" id="letra" maxlength="1">
+              <input id="barra" type="submit" value="Comprobar" onclick="usuario(); return false;">
+          </form>
+      </div>
+          <div class="col-4">
+              <table id="tabla">
+                  <tr>
+              <td>Aciertos</td>
+              <td>Fallos</td>
+              <td>Letras falladas</td>
+          </tr>
+          <tr>
+              <td><p id="bien"></p></td>
+              <td><p id="mal"></p></td>
+              <td><p id="mostrar_falladas"></p></td>
+          </tr>
+      </div>
+      </table>
+      <div class="col-4">
+          <p id="mostrar_texto"></p>
+      </div>
+  </div>
+</div>
+</div>
+<script src="{%static 'ahorcado/script.js'%}"></script>
 {% endblock %}
