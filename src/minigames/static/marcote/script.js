@@ -2,6 +2,7 @@
 import { randomWord as _randomWord } from "./words.js";
 let randomWord = _randomWord;
 const random = randomWord();
+let win = false;
 
 function draw(container) {
     const grid = document.createElement('div');
@@ -62,6 +63,7 @@ function revelar(guess) {
     const final = info.row == 5;
     if (ganador) {
         document.getElementById('resultado-wordle').innerHTML = 'Has ganado 👍';
+        win = true;
     } else if (final) {
         document.getElementById('resultado-wordle').innerHTML = `Has perdido, la random era: ${info.random}`;
     }
@@ -97,7 +99,7 @@ function teclas() {
         if (key === 'Backspace') {
             borrar();
         }
-        if (key.length === 1 && key.match(/[a-z]/i)) {
+        if (key.length === 1 && key.match(/[a-z]/i) && !win) {
             add(key);
         }
         update();
