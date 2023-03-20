@@ -1,0 +1,16 @@
+{% extends 'minigame_base.html' %}
+{% load bootstrap5 %}
+{% load static %}
+
+{% block minigame %}
+<link rel="stylesheet" href="{% static 'conecta-4_minigame/style.css' %}">
+    <div class="container">
+        <div id="tablero"></div>
+        <div id="ganador"></div>
+        <div id="marcador">
+            <h1 class="text-center"><b id="p1">0</b> vs <b id="ia">0</b></h1>
+        </div>
+        <div id="logros"></div>
+    </div>
+    <script src="{% static 'conecta-4_minigame/script.js' %}"></script>
+{% endblock %}

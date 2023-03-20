@@ -3,7 +3,11 @@
 {% load static %}
 
 {% block minigame %}
-    <div id="game">
-        <h1>Wordle</h1>
-    </div>
+<link rel="stylesheet" href="{% static 'marcote/css/style.css' %}">
+<div class="container">
+    <div id="game"></div>
+    <h2 id="resultado-wordle" class="text-center font-weight-normal"></h2>
+</div>
+<script defer type="module" src="{% static 'marcote/script.js' %}"></script>
+<script type="module" src="{% static 'marcote/words.js' %}"></script>
 {% endblock %}

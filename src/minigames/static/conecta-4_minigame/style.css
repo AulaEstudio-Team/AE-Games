@@ -1,0 +1,46 @@
+body{
+    color: white;
+}
+
+table{
+    border-spacing: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: blue;
+}
+
+#boton{
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.yellow{
+    background-color: yellow;
+    cursor: default;
+}
+
+.red{
+    background-color: red;
+    cursor: default;
+}
+
+#marcador{
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    border: 1px solid white;
+}
+
+#p1{
+    color: red;
+}
+
+#ia{
+    color: yellow;
+}

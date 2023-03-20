@@ -1,0 +1,109 @@
+@font-face {
+    font-family: arcade;
+    src: url(fonts/GamePlayed-vYL7.ttf);
+}
+
+#juego{
+    background-color: rgb(36, 36, 36);
+    height: 600px;
+}
+
+#titulo{
+    color: white;
+    text-align: center;
+    font-family: arcade;
+}
+
+#titulo1{
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    font-family: arcade;
+    text-shadow: 5px 3px 0px green;
+}
+
+#mapa{
+    border: 2px solid white;
+    border-bottom: 2px solid red;
+}
+
+.cosas{
+    color: rgb(145, 97, 201);
+}
+
+#puntuacion{
+    margin-right: 20px;
+    color: white;
+    font-size: 25px;
+    font-family: arcade;
+}
+
+#nick{
+    margin-top: 5%; 
+    background-color: rgba(0, 0, 0, 0.781);
+    border: none;
+    font-family: arcade;
+    color: white;
+    height: 80px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#start{
+    margin-top: 1%;
+    background-color: rgba(0, 0, 0, 0.781);
+    border: none;
+    font-family: arcade;
+    color: white;
+    height: 60px;
+    border-radius: 10px;
+    text-align: center;
+    color: rgb(0, 204, 0);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#start:hover{
+    animation-name: start_hover;
+    animation-duration: 1s;
+    cursor: pointer;
+}
+
+
+
+@keyframes start_hover {
+    0% {
+        background-color:  rgba(0, 0, 0, 0.781);
+    }
+
+    100% {
+        background-color:  rgba(0, 0, 0, 0.527);
+    }
+}
+
+#start:hover{
+    background-color:  rgba(0, 0, 0, 0.527);
+}
+
+#game_over{
+    font-family: arcade;
+    font-size: 60px;
+    color: white;
+    margin-top: 10%;
+    text-shadow: 4px 2px 0px green;
+}
+
+#restart{
+    border: 2px solid green;
+    width: 15%;
+    height: 140%;
+    border-radius: 10px;
+    font-family: arcade;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    box-shadow: 3px 3px 0px black;
+}
+
+#restart:hover{
+    box-shadow: none;
+}

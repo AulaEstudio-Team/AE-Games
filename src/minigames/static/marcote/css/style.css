@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+:root {
+  --default: #121213;
+  --empty: #3a3a3c;
+  --wrong: #b59f3b;
+  --right: #538d4e;
+}
+
+#game {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  margin-top: 5rem;
+  width: 100%;
+  height: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: repeat(6, auto);
+  grid-template-columns: repeat(5, auto);
+}
+
+.box {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #9e9eb4;
+  margin: 4px;
+  color: white;
+  border-radius: 10px;
+  text-transform: uppercase;
+  display: grid;
+  place-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.4rem;
+}
+
+.box.empty {
+  background: var(--empty);
+  border: 2px solid var(--empty);
+}
+
+.box.wrong {
+  background: var(--wrong);
+  border: 2px solid var(--wrong);
+}
+
+.box.right {
+  background: var(--right);
+  border: 2px solid var(--right);
+}
+
+#resultado-wordle {
+  margin-top: 20%;
+  color: white !important;
+}
