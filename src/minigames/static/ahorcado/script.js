@@ -1,6 +1,6 @@
 "use strict"
 
-document.getElementById("imagen2").src='img/ahorcado_6.png';
+document.getElementById("imagen2").src='/static/ahorcado/img/ahorcado_6.png';
 
 import { randomWord as _randomWord } from "./words.js";
 let randomWord = _randomWord;
@@ -67,7 +67,7 @@ function verificar(RANDOM, array, fallos){
         }
     }
     if(fallos==1){
-        document.getElementById("imagen2").src='img/ahorcado_5.png';
+        document.getElementById("imagen2").src='static/ahorcado/img/ahorcado_5.png';
     }
     if(fallos==2){
         document.getElementById("imagen2").src='img/ahorcado_4.png';
