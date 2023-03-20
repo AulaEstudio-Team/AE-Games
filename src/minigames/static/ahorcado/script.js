@@ -2,28 +2,18 @@
 
 document.getElementById("imagen2").src='AE-Games\src\minigames\static\ahorcado\img\ahorcado_6.png';
 
-const LISTA=["gato", "hotel", "subasta", "onomatopeya", "esternocleidomastoideo","desoxirribonucleico", "casa", "jeringuilla", "ladron", "bistec", "ranura", "equipo", "menhir"]
-
+import { randomWord as _randomWord } from "./words.js";
+let randomWord = _randomWord;
+const RANDOM = randomWord();
 
 function recoge_letra(){
     let letra_elegida=document.getElementById("letra").value;
     return letra_elegida;
-}
-
-const RANDOM = Math.floor(Math.random()*LISTA.length);
-    
-
-
-function seleccion_palabra(){
-    let palabra=LISTA[RANDOM];
-    return palabra;
-}
-
+}   
 
 function array_vacio(){
-    let palabra=seleccion_palabra();
     let array=[]
-    for(let i=0;i<palabra.length;i++){
+    for(let i=0;i<RANDOM.length;i++){
         array.push("_ ");
     }
     return array;
@@ -39,7 +29,6 @@ let falladas=[];
 function usuario(){
     let control_comprobar=true;
     let letra=recoge_letra()
-    let palabra_random=seleccion_palabra();
     let encontrada=false;
     for(let c of comprobar){
         if(c==letra){
@@ -47,9 +36,9 @@ function usuario(){
         }
     }
     if(control_comprobar==true){
-        for(let i=0;i<palabra_random.length;i++){
-            if(letra==palabra_random[i]){
-                array.splice(i,1, palabra_random[i]);
+        for(let i=0;i<RANDOM.length;i++){
+            if(letra==RANDOM[i]){
+                array.splice(i,1, RANDOM[i]);
                 encontrada=true;
                 comprobar.push(letra);
             }  
@@ -67,13 +56,13 @@ function usuario(){
     }
     mostrar_texto.innerHTML=array;
     mostrar_falladas.innerHTML=falladas;
-    verificar(palabra_random, array, fallos)
+    verificar(RANDOM, array, fallos)
 }
 
-function verificar(palabra_random, array, fallos){
+function verificar(RANDOM, array, fallos){
     let verificar=true;
-    for(let i=0;i<palabra_random.length;i++){
-        if(palabra_random[i]!=array[i]){
+    for(let i=0;i<RANDOM.length;i++){
+        if(RANDOM[i]!=array[i]){
             verificar=false;
         }
     }
