@@ -3,12 +3,18 @@
 {% load static %}
 
 {% block content %}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
 <link rel="stylesheet" href="{% static 'styles/style_profile.css' %}">
+{% comment %} {% for dato in datos_lista%} {% endcomment %}
+    {% comment %} <p>{{ datos_lista }}</p> {% endcomment %}
+{% comment %} {% endfor %} {% endcomment %}
 <div class="overlay-inicio"></div>
 
-{% comment %} {% for dato in datos_lista%} {% endcomment %}
-{% comment %} <p>{{ datos_lista }}</p> {% endcomment %}
-{% comment %} {% endfor %} {% endcomment %}
 
 <div class="row d-flex justify-content-center mx-5" id="titulo-home">
     <div class="col-lg-2" id="perfile">
@@ -18,8 +24,8 @@
         <p class="text-white-50 mb-3">3000 xp</p>
     </div>
 
-    <div class="col-lg-10">
-        <div class="scrollspy-example">
+    <div class="col-lg-10 pr-0">
+        <div class="scrollspy-example" id="scroll-games">
             <div class="row">
                 <div class="col-sm-3">
                     <p class="mb-0">Minigame 1</p>
@@ -46,64 +52,84 @@
                     <p class="text-white-50 mb-0">1000 xp</p>
                 </div>
             </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <p class="mb-0">Minigame 3</p>
+                </div>
+                <div class="col-sm-9">
+                    <p class="text-white-50 mb-0">1000 xp</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <p class="mb-0">Minigame 3</p>
+                </div>
+                <div class="col-sm-9">
+                    <p class="text-white-50 mb-0">1000 xp</p>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="row mt-4">
-        <div class="col-md-6">
-            <div class="row">
-                <div class="col-sm-4">
-                    <p class="mb-0">Nombre de Misión</p>
+    <div class="scrollspy-example" id="scroll-games">
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <p class="mb-0">Nombre de Misión</p>
+                    </div>
+                    <div class="col-sm-8">
+                        <p class="text-white-50 mb-0">Descripción de la misión</p>
+                    </div>
                 </div>
-                <div class="col-sm-8">
-                    <p class="text-white-50 mb-0">Descripción de la misión</p>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <p class="mb-0">Nombre de Misión</p>
+                    </div>
+                    <div class="col-sm-8">
+                        <p class="text-white-50 mb-0">Descripción de la misión</p>
+                    </div>
                 </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-sm-4">
-                    <p class="mb-0">Nombre de Misión</p>
-                </div>
-                <div class="col-sm-8">
-                    <p class="text-white-50 mb-0">Descripción de la misión</p>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-sm-4">
-                    <p class="mb-0">Nombre de Misión</p>
-                </div>
-                <div class="col-sm-8">
-                    <p class="text-white-50 mb-0">Descripción de la misión</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="row">
-                <div class="col-sm-4">
-                    <p class="mb-0">Nombre de Misión</p>
-                </div>
-                <div class="col-sm-8">
-                    <p class="text-white-50 mb-0">Descripción de la misión</p>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <p class="mb-0">Nombre de Misión</p>
+                    </div>
+                    <div class="col-sm-8">
+                        <p class="text-white-50 mb-0">Descripción de la misión</p>
+                    </div>
                 </div>
             </div>
-            <hr>
-            <div class="row">
-                <div class="col-sm-4">
-                    <p class="mb-0">Nombre de Misión</p>
+    
+            <div class="col">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <p class="mb-0">Nombre de Misión</p>
+                    </div>
+                    <div class="col-sm-8">
+                        <p class="text-white-50 mb-0">Descripción de la misión</p>
+                    </div>
                 </div>
-                <div class="col-sm-8">
-                    <p class="text-white-50 mb-0">Descripción de la misión</p>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <p class="mb-0">Nombre de Misión</p>
+                    </div>
+                    <div class="col-sm-8">
+                        <p class="text-white-50 mb-0">Descripción de la misión</p>
+                    </div>
                 </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-sm-4">
-                    <p class="mb-0">Nombre de Misión</p>
-                </div>
-                <div class="col-sm-8">
-                    <p class="text-white-50 mb-0">Descripción de la misión</p>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <p class="mb-0">Nombre de Misión</p>
+                    </div>
+                    <div class="col-sm-8">
+                        <p class="text-white-50 mb-0">Descripción de la misión</p>
+                    </div>
                 </div>
             </div>
         </div>
