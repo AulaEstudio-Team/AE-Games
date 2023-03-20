@@ -3,7 +3,6 @@ import { randomWord as _randomWord } from "./words.js";
 let randomWord = _randomWord;
 const random = randomWord();
 let win = false;
-console.log(random);
 
 function draw(container) {
     const grid = document.createElement('div');
