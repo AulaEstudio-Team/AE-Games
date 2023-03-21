@@ -2,7 +2,7 @@
 let lista = [];
 let tabla = document.createElement("table")
 let div = document.getElementById("juego")
-
+let juega=false;
 //Crear Tablero
 
 for (let i = 0; i < 3; i++) {
@@ -50,12 +50,13 @@ function juego(x, y) {
         for (let j = 0; j < lista[i].length; j++) {
             comprueba_empate()
 
-            if (x == i && y == j) {
+            if (x == i && y == j && juega==false) {
 
                 console.log(x, y);
                 let td = document.getElementById(`${y}${x}`)
                 td.innerHTML = "<h1 id='letra'>X</h1>"
                 lista[y][x] = "X"
+                juega=true;
                 console.log(lista)
                 comprueba_victoria()
                 setTimeout(movimiento_rival, 500)
@@ -77,6 +78,7 @@ function movimiento_rival(row, col) {
 
                 let posicion = document.getElementById(`${random}${random2}`)
                 posicion.innerHTML = "<h1 id='letra'>O</h1>"
+                juega=false;
                 comprueba_victoria_rival()
                 return;
             }
@@ -85,6 +87,7 @@ function movimiento_rival(row, col) {
                 lista[i][j] = "O"
                 let crear = document.getElementById(`${i}${j}`)
                 crear.innerHTML = "<h1 id='letra'>O</h1>"
+                juega=false;
                 comprueba_victoria_rival()
                 return;
             }
