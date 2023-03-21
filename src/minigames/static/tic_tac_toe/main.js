@@ -1,4 +1,5 @@
 "use strict";
+
 let lista = [];
 let tabla = document.createElement("table")
 let div = document.getElementById("juego")
@@ -56,7 +57,7 @@ function juego(x, y) {
                 let td = document.getElementById(`${y}${x}`)
                 td.innerHTML = "<h1 id='letra'>X</h1>"
                 lista[y][x] = "X"
-                juega=true;
+                juega=true
                 console.log(lista)
                 comprueba_victoria()
                 setTimeout(movimiento_rival, 500)
@@ -78,7 +79,7 @@ function movimiento_rival(row, col) {
 
                 let posicion = document.getElementById(`${random}${random2}`)
                 posicion.innerHTML = "<h1 id='letra'>O</h1>"
-                juega=false;
+                juega=false
                 comprueba_victoria_rival()
                 return;
             }
