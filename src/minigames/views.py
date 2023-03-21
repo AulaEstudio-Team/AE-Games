@@ -23,11 +23,11 @@ def atari_breakout(request):
     return render(request, template_name)
     
 
-def my_guerradelperujuego(request):
-    """Guerra del peru minigame
-    TODO: remove
+def tic_tac_toe(request):
+    """Tic Tac Toe minigam
+    
     """
-    template_name = 'guerra_peru\index.html'
+    template_name = 'tic_tac_toe\index.html'
     return render(request, template_name)
     
 
