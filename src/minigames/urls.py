@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import mock_minigame_view, conecta4, wordle_minigame, TRON_Legacy_minigame_view, ahorcado_view, my_guerradelperujuego, atari_breakout, tic_tac_toe
+from .views import mock_minigame_view, conecta4, wordle_minigame, TRON_Legacy_minigame_view, ahorcado_view, atari_breakout, tic_tac_toe, pinturillas
 
 urlpatterns = [
     path('mock_minigame/', mock_minigame_view),
