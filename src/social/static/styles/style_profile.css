@@ -21,9 +21,10 @@
     z-index: 100 !important;
     font-size: 1em;
     color: white;
-    margin-top: 5%;
-    max-width: 95vw;
-    max-height: 90vh;
+    margin-top: 2%;
+    top: 50%;
+    left: 25%;
+    transform: translate(-15%, -50%);
     padding: 5vh 5vh 5vh 5vh;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.212);
