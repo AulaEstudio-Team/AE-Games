@@ -1,0 +1,115 @@
+body{
+    background-color: rgba(0, 0, 0, 0.623);
+    background-repeat: no-repeat;
+    background-image: url(wallpaperbetter\ \(1\).jpg);
+    background-size: cover;
+}
+button :hover{
+transform:scale(1.5em);
+
+}
+
+#color1{
+    background-color: rgb(255, 255, 255);
+    width: 50px;
+    height: 50px;
+}
+
+#color2{
+    background-color: rgb(87, 86, 86);
+    width: 50px;
+    height: 50px;
+}
+
+
+button{
+    position: relative;
+  }
+  button::after{
+    content: attr(data-title);
+    position: absolute;
+    background: #444;
+    color: #fff;
+    left: 0;
+    top: 100%;
+    font-size: 12px;
+    width: 100px;
+    padding: 5px;
+    border-radius: 4px;
+    transition: 300ms;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(15px);
+  }
+  button:hover::after{
+    opacity: 1;
+    transform: translateY(5px);
+  }
+
+  #caballeria{
+    border-radius: 2.5em;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(55, 0, 255);
+  }
+
+  #infanteria{
+    border-radius: 2.5em;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+  }
+
+  #bombarderos{
+    border-radius: 2.5em;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(189, 247, 29);
+  }
+  #gran_bomba{
+    border-radius: 2.5em;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(247, 29, 83);
+    
+  }
+
+  #gran_bomba:active{
+    position: relative;
+    animation: mymove 2s;
+    animation-direction: alternate;
+  }
+  #bomba{
+    background-size: cover;
+  }
+ 
+  #mussolini{
+    border-radius: 2.5em;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 0, 0);
+  }
+  #lider_oculto{
+    visibility: hidden;
+    display: none;
+    
+  }
+  #L_ataque1{
+    background-image: url(static/guerra_peru/imagenes/Lodestar_ataque1.jpg);
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+  }
+  #LD_boton{
+    background-image: url(Lodestar_ataque1.jpg);
+    background-size: cover;
+  }
+  #L_ataque2{
+    background-image: url(Lodestar_ataque1.jpg);
+    background-size: cover;
+  }
+
+  /* @keyframes mymove {
+    from {bottom: 0%;}
+    to {bottom: 100%;} 
+  } */
