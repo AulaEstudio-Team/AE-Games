@@ -1,6 +1,8 @@
 //Guardar el elemento y el contexto
 const mainCanvas = document.getElementById("main-canvas");
 const context = mainCanvas.getContext("2d");
+const clearButton = document.getElementById("clear-button");
+
 
 let initialX;
 let initialY;
@@ -24,6 +26,11 @@ const dibujar = (cursorX, cursorY) => {
   initialX = cursorX;
   initialY = cursorY;
 };
+
+// boton para borrar la pizarra
+clearButton.addEventListener("click", () => {
+  context.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
+});
 
 const mouseDown = (evt) => {
   initialX = evt.offsetX;
