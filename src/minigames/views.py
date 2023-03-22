@@ -51,3 +51,10 @@ def conecta4(request):
     """
     template_name = 'conecta-4_minigame/index_minigame.html'
     return render(request, template_name)
+    
+
+def snake(request):
+    """SNAKE
+    """
+    template_name = 'snake-game/snake.html'
+    return render(request, template_name)
