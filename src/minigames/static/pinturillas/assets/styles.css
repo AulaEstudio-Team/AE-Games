@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main-container {
+  background-color: rgb(49, 49, 94);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  background-color: #fff;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+#clear-button{
+    background-image:url(../assets/imagengoma.png);
+    background-repeat:no-repeat;
+    height:90px;
+    width: 90px;
+    background-position:center;
+    background-color: aqua;
+  }
