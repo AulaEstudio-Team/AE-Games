@@ -23,11 +23,11 @@ def atari_breakout(request):
     return render(request, template_name)
     
 
-def my_guerradelperujuego(request):
-    """Guerra del peru minigame
-    TODO: remove
+def tic_tac_toe(request):
+    """Tic Tac Toe minigam
+    
     """
-    template_name = 'guerra_peru\index.html'
+    template_name = 'tic_tac_toe\index.html'
     return render(request, template_name)
     
 
@@ -50,6 +50,21 @@ def conecta4(request):
     TODO: remove
     """
     template_name = 'conecta-4_minigame/index_minigame.html'
+    return render(request, template_name)
+    
+
+def pinturillas(request):
+    """Pinturillas
+    TODO: remove
+    """
+    template_name = 'pinturillas/index.html'
+    return render(request, template_name)
+
+
+def snake(request):
+    """SNAKE
+    """
+    template_name = 'snake-game/snake.html'
     return render(request, template_name)
 
 

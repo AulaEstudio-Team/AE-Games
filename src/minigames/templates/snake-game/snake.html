@@ -1,0 +1,29 @@
+{% extends 'minigame_base.html' %}
+{% load bootstrap5 %}
+{% load static %}
+
+{% block minigame %}
+<link rel="stylesheet" href="{% static 'snake/style.css' %}">
+
+
+<style>
+    canvas {
+        border: 3px solid rgb(54, 231, 47);
+        background-color: black;
+    }
+</style>
+
+<div class="contenedor">
+    <div class="opciones">
+        <div class="puntos">Puntos:15</div>
+        <div class="maximo-puntos">Puntos Maximos: 30</div>
+
+    </div>
+
+</div>
+<div class="tablero">
+    <canvas id="canvas" width="600" height="600"></canvas>
+</div>
+<script src="{% static 'snake/snake.js' %}"></script>
+
+{% endblock %}

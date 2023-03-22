@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Proyecto canvas</title>
-    <link rel="stylesheet" href="assets/styles.css">
-  </head>
-  <body>
-    <main class="main-container">
-        <canvas id="main-canvas" width="900" height="900""></canvas>
-    </main>
-    <script src="assets/index.js"></script>
-  </body>
-</html>
+{% extends 'minigame_base.html' %}
+{% load bootstrap5 %}
+{% load static %}
+
+{% block minigame %}
+<link rel="stylesheet" href="{% static 'pinturillas/assets/styles.css' %}">
+<main class="main-container">
+  <canvas id="main-canvas" width="900vh" height="650vh"></canvas>
+  <button id="clear-button"></button>
+</main>
+<script src="{% static 'pinturillas/assets/index.js' %}"></script>
+
+{% endblock %}
+
+
+
