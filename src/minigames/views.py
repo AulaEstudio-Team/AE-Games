@@ -51,3 +51,11 @@ def conecta4(request):
     """
     template_name = 'conecta-4_minigame/index_minigame.html'
     return render(request, template_name)
+
+
+def matatopos_view(request):
+    """Matatopos
+    TODO: remove
+    """
+    template_name = 'matatopos/matatopos.html'
+    return render(request, template_name)
