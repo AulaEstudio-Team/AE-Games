@@ -15,12 +15,12 @@
                     placeholder="Repeat password..."><br>
                     <button class="btn" onclick="return false">Enviar</button>
             </form> {% endcomment %}
-        <form method="post">
+        <form method="post" id="formulariodjango">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form1.as_p }}
+            {{ form2.as_p }}
             <button type="submit">Register</button>
             <br><br>
-            <a href="/home">Home</a>
         </form>
     </div>
 </div>
