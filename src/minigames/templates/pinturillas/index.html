@@ -1,0 +1,15 @@
+{% extends 'minigame_base.html' %}
+{% load bootstrap5 %}
+{% load static %}
+
+{% block minigame %}
+<link rel="stylesheet" href="{% static 'pinturillas/assests/style.css' %}">
+<main class="main-container">
+  <canvas id="main-canvas" width="700" height="700"></canvas>
+</main>
+<script src="{% static 'pinturillas/assets/index.js' %}"></script>
+
+{% endblock %}
+
+
+

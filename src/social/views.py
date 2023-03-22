@@ -23,7 +23,7 @@ def home_view(request):
 def login(request):
     """Login View"""
     template_name = "login.html"
-    return render(request, template_name);
+    return render(request, template_name)
 
 def profile_view(request):
     """Profile View"""
