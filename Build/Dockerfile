@@ -30,7 +30,8 @@ RUN mkdir mkdir /var/log/gunicorn
 #################
 
 # copy the django code
-COPY ./src ./app
+COPY ./src .
+
 
 ########################
 # Prepare the endpoint #
@@ -38,6 +39,10 @@ COPY ./src ./app
 
 # Copy the endpoint.sh
 COPY ./Build/entrypoint.sh ./config/
+RUN sed -i 's/\r$//' ./config/entrypoint.sh
+
+# Copy the endpoint
+COPY ./Build/config.yml ./
 
 # make our entrypoint.sh executable
 RUN chmod +x config/entrypoint.sh
