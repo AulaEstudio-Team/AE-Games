@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+
+}
+
+
+
+.contenedor{
+  
+    background: greenyellow;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.opciones{
+    color: red;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 20px 27px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tablero{
+    width:600px;
+    height: 600px;
+    background-color: white;
+    display: grid;
+    
+}

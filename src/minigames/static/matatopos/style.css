@@ -1,0 +1,78 @@
+.tablero{
+    width: 500px;
+    background:url("/static/matatopos/img/cesped.png");
+    overflow: hidden;
+    
+} 
+
+.tablero .contenido{
+    float: left;
+    width: 33.333%; 
+    position:relative;
+    cursor: pointer; 
+}
+
+.tablero .contenido .agujero{
+    background: url("/static/matatopos/img/agujero.png") no-repeat;
+    background-position: bottom center; 
+    width: 100%; 
+    height: 100px;
+    position:relative;
+    z-index: 10;
+}
+
+.tablero .contenido .topo{
+    position: absolute;
+    left: 50px;
+    bottom: 30px;
+    width: 81px;
+    height: 0px;
+    background: url("/static/matatopos/img/topo.png") no-repeat;
+    background-position: top center;
+    transition: all 0.5s;
+}
+
+.tablero .contenido .topo-dorado{
+    position: absolute;
+    left: 50px;
+    bottom: 30px;
+    width: 81px;
+    height: 0px;
+    background: url("/static/matatopos/img/topo-dorado.png") no-repeat;
+    background-position: top center;
+    transition: all 0.1s;
+}
+
+.tablero .contenido.active .topo{
+    height:146px;
+}
+
+.tablero .contenido.active-d .topo-dorado{
+    height:146px;
+}
+
+
+.tablero .contenido .topo-enfadado{
+    position: absolute;
+    left: 50px;
+    bottom: 30px;
+    width: 81px;
+    height: 0px;
+    background: url("/static/matatopos/img/topo-enfadado.png") no-repeat;
+    background-position: top center;
+    transition: all 0.1s;
+}
+
+.tablero .contenido.active-e .topo-enfadado{
+    height:146px;
+}
+
+
+#texto{
+    color:green;
+}
+
+#content{
+    border: 8px black;
+}
+
