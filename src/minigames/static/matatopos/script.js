@@ -9,23 +9,26 @@ let puntos=0;
 $(function(){
     $(".contenido").hover(function(){
         let control=$(this);
-        control.find(".agujero").click(function(){
-            if(control.hasClass("active-e")){
-                control.removeClass("active-e");
-                puntos = puntos-5
-                $("#puntuacion").html(puntos);
-            }
-            if(control.hasClass("active-d")){
-                control.removeClass("active-d");
-                puntos = puntos+3
-                $("#puntuacion").html(puntos);
-            }
-            if(control.hasClass("active")){
-                control.removeClass("active");
-                puntos++
-                $("#puntuacion").html(puntos);
-            }
-        })
+        if(tiempo_total!=0){
+            
+            control.find(".agujero").click(function(){
+                if(control.hasClass("active-e")){
+                    control.removeClass("active-e");
+                    puntos = puntos-5
+                    $("#puntuacion").html(puntos);
+                }
+                if(control.hasClass("active-d")){
+                    control.removeClass("active-d");
+                    puntos = puntos+3
+                    $("#puntuacion").html(puntos);
+                }
+                if(control.hasClass("active")){
+                    control.removeClass("active");
+                    puntos++
+                    $("#puntuacion").html(puntos);
+                }
+            })
+        }
     })
 })
 
@@ -62,43 +65,71 @@ function enfadadoRandom(){
 
 //Intervalos que llaman la funcion correspondiente cada x numero de segundos
 
-let intervalo= setInterval(function(){
-    topoRandom();
-}, 1200)
+let start = false;
 
+function btnStart(){
+    start=true;
+    
+    if(start==true){
+        let inter= setInterval(function(){
+            setTimeout("cuentaAtras()",1000);
+        }, 1000);
+            
+        let control_tiempo=setInterval(function(){
+            if(tiempo_total==0){
+                clearInterval(intervalo)
+                clearInterval(intervalo2)
+                clearInterval(intervalo3)
+            }
+        }, 100);
+        
+        let intervalo= setInterval(function(){
+            topoRandom();
+        }, 1200)
+        
+        
+        let intervalo2= setInterval(function(){
+            doradoRandom();
+        }, 900)
+        
+        
+        
+        let intervalo3= setInterval(function(){
+            enfadadoRandom();
+        }, 2000)
+        
+    }
 
-let intervalo2= setInterval(function(){
-    doradoRandom();
-}, 900)
+}
 
-
-
-let intervalo3= setInterval(function(){
-    enfadadoRandom();
-}, 2000)
+window.onload = cuentaAtras;
 
 function reiniciar(){
     location.reload();
 }
 
-window.onload = cuentaAtras;
 var tiempo_total = 30;
 function cuentaAtras() {
     document.getElementById('temporizador').innerHTML = tiempo_total;
     if(tiempo_total==0 && puntos<40){
         document.getElementById("texto").innerHTML="¡¡¡GAME OVER!!!"
-        let reload=setInterval(function(){
-            location.reload();
-        }, 3000)
+        start=false;
+        
+        
+
     }else{
-        tiempo_total-=1;
-        setTimeout("cuentaAtras()",1000);
+            
+            tiempo_total-=1;
+        
     }
     if(puntos>=40){
         document.getElementById("texto").innerHTML="¡¡¡VICTORY!!!"
-        
+        clearInterval(intervalo);
+        clearInterval(intervalo2);
+        clearInterval(intervalo3);
     }
 }
+
 
 
 
