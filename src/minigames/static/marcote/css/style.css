@@ -19,7 +19,7 @@ h1 {
   justify-content: center;
   align-items: start;
   width: 100%;
-  height: auto;
+  /* height: 50vh; */
 }
 
 .grid {
