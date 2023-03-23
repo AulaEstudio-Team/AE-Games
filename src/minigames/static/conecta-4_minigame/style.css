@@ -16,6 +16,7 @@ table{
     width: 60px;
     cursor: pointer;
     border-radius: 50px;
+    border: 2px solid black;
 }
 
 .yellow{
