@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 from pathlib import Path
+# import yaml
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -136,3 +137,31 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+try:
+    with open(Path(BASE_DIR / 'config.yml'), 'r') as conf_stream:
+        print("Parsing yml file")
+        app_config = yaml.safe_load(conf_stream)
+        
+        DEBUG = False
+        if app_config.get("secret_key", False):
+            SECRET_KEY = app_config.get("secret_key")
+        if app_config.get("allowed_hosts", False):
+            ALLOWED_HOSTS = app_config.get("allowed_hosts")
+        if app_config.get("sqlite_file", False):
+            if app_config.get("sqlite_file").startswith("/"):
+                DATABASES['default']['NAME'] = app_config.get("sqlite_file")
+            else:
+                DATABASES['default']['NAME'] = BASE_DIR / app_config.get("sqlite_file")
+        
+        if app_config.get("static_root", False):
+            STATIC_ROOT = app_config.get("static_root")
+        if app_config.get("media_root", False):
+            MEDIA_ROOT = app_config.get("media_root")
+            
+        CSRF_COOKIE_SECURE = app_config.get("csrf_cokie_secure", False)    
+        SESSION_COOKIE_SECURE = app_config.get("session_cokie_secure", False)    
+        CONN_MAX_AGE = app_config.get("conn_max_age", 0)    
+        
+except OSError:
+    print("No config file, local deploy")

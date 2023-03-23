@@ -66,3 +66,11 @@ def snake(request):
     """
     template_name = 'snake-game/snake.html'
     return render(request, template_name)
+
+
+def matatopos_view(request):
+    """Matatopos
+    TODO: remove
+    """
+    template_name = 'matatopos/matatopos.html'
+    return render(request, template_name)

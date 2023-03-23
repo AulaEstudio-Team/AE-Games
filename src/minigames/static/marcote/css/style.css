@@ -1,18 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 
-:root {
-  --default: #121213;
-  --empty: #3a3a3c;
-  --wrong: #b59f3b;
-  --right: #538d4e;
+body {
+  background-color: #343436;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Black Ops One', cursive;
+  font-size: 40px;
+  color: #64b45d;
+  text-shadow: 3px 5px 2px #797985;
 }
 
 #game {
   display: flex;
   justify-content: center;
   align-items: start;
-  margin-top: 5rem;
   width: 100%;
   height: auto;
 }
@@ -33,26 +38,27 @@
   text-transform: uppercase;
   display: grid;
   place-items: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto';
   font-size: 2.4rem;
 }
 
 .box.empty {
-  background: var(--empty);
-  border: 2px solid var(--empty);
+  background: #797985;
+  border: 2px solid #797985;
 }
 
 .box.wrong {
-  background: var(--wrong);
-  border: 2px solid var(--wrong);
+  background: #b59f3b;
+  border: 2px solid #b59f3b;
 }
 
 .box.right {
-  background: var(--right);
-  border: 2px solid var(--right);
+  background: #538d4e;
+  border: 2px solid #538d4e;
 }
 
 #resultado-wordle {
-  margin-top: 20%;
+  text-align: center;
   color: white !important;
+  font-family: 'Roboto'
 }
