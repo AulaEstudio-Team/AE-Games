@@ -33,3 +33,4 @@ class UserForm(UserCreationForm):
 
     # class CommentForm(forms.Form):
         # comment = forms.CharField(widget=forms.Textarea(), label=None)
+        
