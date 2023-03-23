@@ -5,12 +5,28 @@
 {% block minigame %}
 <link rel="stylesheet" href="{% static 'pinturillas/assets/styles.css' %}">
 <main class="main-container">
-  <canvas id="main-canvas" width="900vh" height="650vh"></canvas>
-  <button id="clear-button"></button>
+  <div id="colores">
+    <ul>
+      <h2>Color</h2>
+      <button id="color-rojo"></button>
+      <button id="color-amarillo"></button>
+      <button id="color-verde"></button>
+      <button id="color-azul"></button>
+      <button id="color-rosa"></button>
+      <button id="color-morado"></button>
+      <button id="color-negro"></button>
+      <br>
+      <h2>Grosor</h2>
+      <button id="grosor-1">fino</button>
+      <button id="grosor-2">medio</button>
+      <button id="grosor-3">grueso</button>
+      <br>
+      <h2>Borrar</h2>
+      <button id="clear-button"></button>
+    </ul>
+  </div>
+  <canvas id="main-canvas" width="900vh" height="600vh"></canvas>
 </main>
 <script src="{% static 'pinturillas/assets/index.js' %}"></script>
 
 {% endblock %}
-
-
-
