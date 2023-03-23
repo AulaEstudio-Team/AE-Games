@@ -20,8 +20,102 @@ canvas {
 #clear-button{
     background-image:url(../assets/imagengoma.png);
     background-repeat:no-repeat;
-    height:90px;
-    width: 90px;
+    height: 60px;
+    width: 60px;
     background-position:center;
     background-color: aqua;
+  }
+
+#color-rojo{
+    background-color: red;
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    border-radius: 50%;
+  }
+
+#color-amarillo{
+    background-color: yellow;
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    border-radius: 50%;
+  }
+
+#color-verde{
+    background-color: green;
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    border-radius: 50%;
+  }
+
+#color-azul{
+    background-color: blue;
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    border-radius: 50%;
+  }
+
+#color-rosa{
+    background-color: #FF00FF;
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    border-radius: 50%;
+  }
+
+#color-morado{
+    background-color: purple;
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    border-radius: 50%;
+  }
+
+#color-negro{
+    background-color: black;
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    border-radius: 50%;
+  }
+
+#grosor-1{
+    background-color: rgb(255, 255, 255);
+    height: 30px;
+    width: 40px;
+    text-align: center;
+    border-radius: 100%;
+  }
+
+#grosor-2{
+    background-color: rgb(255, 255, 255);
+    height: 30px;
+    width: 60px;
+    text-align: center;
+    border-radius: 100%;
+  }
+
+#grosor-3{
+    background-color: rgb(255, 255, 255);
+    height: 30px;
+    width: 60px;
+    text-align: center;
+    border-radius: 100%;
+  }
+
+div{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+  }
+
+
+h2{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    text-align: left;
   }
